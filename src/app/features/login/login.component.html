@@ -1,0 +1,22 @@
+<div class="flex full-size justify-center">
+        <p-card class="m-auto">
+                <div class="flex flex-col items-center gap-8">
+                        <h2 class="self-start">Login</h2>
+
+                        <div>
+                                <span class="p-float-label">
+                                        <input type="email" name="email" pInputText id="email" [(ngModel)]="email"/>
+                                        <label for="email">Email</label>
+                                </span>
+                        </div>
+                        <div>
+                                <span class="p-float-label">
+                                        <input type="password" name="password" pInputText id="password" [(ngModel)]="password">
+                                        <label for="password">Mot de passe</label>
+                                </span>
+                        </div>
+
+                        <p-button label="Connection"></p-button>
+                </div>
+        </p-card>
+</div>
