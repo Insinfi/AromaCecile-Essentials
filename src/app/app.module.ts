@@ -11,6 +11,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,13 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
   ],
   imports: [
+    CoreModule,
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     TooltipModule,
     InputTextModule,
     ButtonModule,
-    CoreModule, 
     CardModule,
     FormsModule
   ],
