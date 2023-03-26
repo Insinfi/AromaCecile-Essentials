@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,13 +12,13 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      {
-        label: 'Huiles essentiels'
-      },
-      { label: 'Huiles végétale' },
+      { label: 'Huiles' , routerLink: '/oils'},
       { label: 'Synergie' },
+      { label: 'Client' },
       { label: 'Calcule Prix' }
     ]
   }
+
+  constructor(protected authService: AuthService){}
 
 }

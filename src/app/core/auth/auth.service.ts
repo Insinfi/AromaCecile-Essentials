@@ -9,7 +9,8 @@ export class AuthService {
 
   constructor(private router: Router) { }
 
-  public isLogged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  // TODO: Change back to false once login is implemented
+  public isLogged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
   login(){
     this.isLogged.next(true);

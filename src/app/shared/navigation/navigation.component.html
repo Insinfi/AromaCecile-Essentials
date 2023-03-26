@@ -1,10 +1,11 @@
-<div class="card">
+<div class="card" *ngIf="authService.isLogged.asObservable() | async">
     <p-menubar [model]="items">
         <ng-template pTemplate="start">
-            <img src="/src/assets/img/flask.png" height="40" class="mr-2" />
+            <img src="/assets/img/flask.png" height="40" class="mr-2 max-h-10" />
         </ng-template>
         <ng-template pTemplate="end">
-            <input type="text" pInputText placeholder="Search" />
+            <!-- <input type="text" pInputText placeholder="Search" /> -->
+            <p-button label="Déconnection" (onClick)="authService.logout()" />
         </ng-template>
     </p-menubar>
 </div>
