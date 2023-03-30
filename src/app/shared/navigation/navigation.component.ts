@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
-      { label: 'Huiles' , routerLink: '/oils'},
+      { label: 'Huiles' , routerLink: '/oil'},
       { label: 'Synergie' },
       { label: 'Client' },
       { label: 'Calcule Prix' }
