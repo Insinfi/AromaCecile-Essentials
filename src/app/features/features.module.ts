@@ -10,6 +10,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TableModule } from 'primeng/table';
     ButtonModule,
     CardModule,
     FormsModule,
-    TableModule
+    TableModule,
+    DropdownModule
   ],
   exports:[
     LoginComponent,

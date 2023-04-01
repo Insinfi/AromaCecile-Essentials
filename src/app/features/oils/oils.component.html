@@ -1,30 +1,53 @@
 <p-table
   #oilTb
+  dataKey="oilId"
   [value]="oilList"
   [rows]="10"
   [showCurrentPageReport]="true"
   [loading]="loading.value"
   [paginator]="true"
-  [globalFilterFields]="['name', 'type', 'oilId']"
+  [globalFilterFields]="['oilId', 'name', 'type']"
 >
   <ng-template pTemplate="header">
     <tr>
-      <th>
+      <th pSortableColumn="oilId">
         <div class="flex">
+          <p-sortIcon field="oilId"></p-sortIcon>
           ID
-          <!-- <p-columnFilter type="text" field="oili"></p-columnFilter> -->
         </div>
       </th>
-      <th>
+      <th pSortableColumn="name">
         <div class="flex">
+          <p-sortIcon field="name"></p-sortIcon>
           Nom
-          <!-- <p-columnFilter type="text" field="Name"></p-columnFilter> -->
+        </div>
+      </th>
+      <th pSortableColumn="type">
+        <div class="flex">
+          <p-sortIcon field="type"></p-sortIcon>
+          Type
+        </div>
+      </th>
+      <th>
+        <div class="flex"></div>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <div class="flex">
+          <p-columnFilter type="text" field="oilId"></p-columnFilter>
         </div>
       </th>
       <th>
         <div class="flex">
-          Type
-          <!-- <p-columnFilter type="text" field="type.ToString()" display="menu"></p-columnFilter> -->
+          <p-columnFilter type="text" field="name"></p-columnFilter>
+        </div>
+      </th>
+      <th>
+        <div class="flex">
+          <p-columnFilter field="type" matchMode="equals" display="menu">
+            <p-dropdown [options]="Oiltypes"></p-dropdown>
+          </p-columnFilter>
         </div>
       </th>
       <th>
@@ -39,7 +62,11 @@
       <td>{{ Oiltypes[oil.type] }}</td>
       <td class="flex">
         <div class="m-1">
-          <p-button (onClick)="edit(oil.oilId)" icon="pi pi-pencil" styleClass="p-button-rounded p-button-help"></p-button>
+          <p-button
+            (onClick)="edit(oil.oilId)"
+            icon="pi pi-pencil"
+            styleClass="p-button-rounded p-button-help"
+          ></p-button>
         </div>
       </td>
     </tr>
